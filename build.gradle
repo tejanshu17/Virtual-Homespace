@@ -1,0 +1,582 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+
+android {
+    compileSdkVersion 28
+    //buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.login2"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-functions:19.0.2'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'com.google.ar:core:1.16.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
+    implementation 'com.google.ar.sceneform:core:1.15.0'
+    implementation "com.google.ar.sceneform:animation:1.15.0"
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation 'com.firebaseui:firebase-ui-database:6.2.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
+    implementation "com.google.firebase:firebase-auth:19.3.1"
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.google.firebase:firebase-core:17.4.1'
+    implementation 'com.google.firebase:firebase-database:19.3.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.3'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+sceneform.asset('sampledata/models/ballchair.fbx',
+        'default',
+        'sampledata/models/ballchair.sfa',
+        'src/main/res/raw/ballchair')
+
+sceneform.asset('sampledata/models/conferencechair.fbx',
+        'default',
+        'sampledata/models/conferencechair.sfa',
+        'src/main/res/raw/conferencechair')
+
+sceneform.asset('sampledata/models/couchchair.fbx',
+        'default',
+        'sampledata/models/couchchair.sfa',
+        'src/main/res/raw/couchchair')
+
+sceneform.asset('sampledata/models/durianofficechair.fbx',
+        'default',
+        'sampledata/models/durianofficechair.sfa',
+        'src/main/res/raw/durianofficechair')
+
+sceneform.asset('sampledata/models/gamingchair.fbx',
+        'default',
+        'sampledata/models/gamingchair.sfa',
+        'src/main/res/raw/gamingchair')
+
+sceneform.asset('sampledata/models/gapchair.fbx',
+        'default',
+        'sampledata/models/gapchair.sfa',
+        'src/main/res/raw/gapchair')
+
+sceneform.asset('sampledata/models/redchairmueblescasa.FBX',
+        'default',
+        'sampledata/models/redchairmueblescasa.sfa',
+        'src/main/res/raw/redchairmueblescasa')
+
+
+sceneform.asset('sampledata/models/modernarmchairyafaray.fbx',
+        'default',
+        'sampledata/models/modernarmchairyafaray.sfa',
+        'src/main/res/raw/modernarmchairyafaray')
+
+sceneform.asset('sampledata/models/officeergonomicchairs.FBX',
+        'default',
+        'sampledata/models/officeergonomicchairs.sfa',
+        'src/main/res/raw/officeergonomicchairs')
+
+sceneform.asset('sampledata/models/vikchair.fbx',
+        'default',
+        'sampledata/models/vikchair.sfa',
+        'src/main/res/raw/vikchair')
+
+sceneform.asset('sampledata/models/bed.fbx',
+        'default',
+        'sampledata/models/bed.sfa',
+        'src/main/res/raw/bed')
+
+sceneform.asset('sampledata/models/bednewer.fbx',
+        'default',
+        'sampledata/models/bednewer.sfa',
+        'src/main/res/raw/bednewer')
+
+sceneform.asset('sampledata/models/bednewest.fbx',
+        'default',
+        'sampledata/models/bednewest.sfa',
+        'src/main/res/raw/bednewest')
+
+sceneform.asset('sampledata/models/blackdoublebed.fbx',
+        'default',
+        'sampledata/models/blackdoublebed.sfa',
+        'src/main/res/raw/blackdoublebed')
+
+sceneform.asset('sampledata/models/bunk.fbx',
+        'default',
+        'sampledata/models/bunk.sfa',
+        'src/main/res/raw/bunk')
+
+sceneform.asset('sampledata/models/doublebed.fbx',
+        'default',
+        'sampledata/models/doublebed.sfa',
+        'src/main/res/raw/doublebed')
+
+sceneform.asset('sampledata/models/kasurbedwithsidetable.fbx',
+        'default',
+        'sampledata/models/kasurbedwithsidetable.sfa',
+        'src/main/res/raw/kasurbedwithsidetable')
+
+sceneform.asset('sampledata/models/militarybed.fbx',
+        'default',
+        'sampledata/models/militarybed.sfa',
+        'src/main/res/raw/militarybed')
+
+sceneform.asset('sampledata/models/poltronadoublebed.fbx',
+        'default',
+        'sampledata/models/poltronadoublebed.sfa',
+        'src/main/res/raw/poltronadoublebed')
+
+sceneform.asset('sampledata/models/princessbed.fbx',
+        'default',
+        'sampledata/models/princessbed.sfa',
+        'src/main/res/raw/princessbed')
+
+sceneform.asset('sampledata/models/castortable.fbx',
+        'default',
+        'sampledata/models/castortable.sfa',
+        'src/main/res/raw/castortable')
+
+sceneform.asset('sampledata/models/coffeetable.fbx',
+        'default',
+        'sampledata/models/coffeetable.sfa',
+        'src/main/res/raw/coffeetable')
+
+sceneform.asset('sampledata/models/diningrect.fbx',
+        'default',
+        'sampledata/models/diningrect.sfa',
+        'src/main/res/raw/diningrect')
+
+sceneform.asset('sampledata/models/majbootdiningtable.fbx',
+        'default',
+        'sampledata/models/majbootdiningtable.sfa',
+        'src/main/res/raw/majbootdiningtable')
+
+sceneform.asset('sampledata/models/rounddining.fbx',
+        'default',
+        'sampledata/models/rounddining.sfa',
+        'src/main/res/raw/rounddining')
+
+sceneform.asset('sampledata/models/roundstylecutcoffee.fbx',
+        'default',
+        'sampledata/models/roundstylecutcoffee.sfa',
+        'src/main/res/raw/roundstylecutcoffee')
+
+sceneform.asset('sampledata/models/styledining.fbx',
+        'default',
+        'sampledata/models/styledining.sfa',
+        'src/main/res/raw/styledining')
+
+sceneform.asset('sampledata/models/styletable.fbx',
+        'default',
+        'sampledata/models/styletable.sfa',
+        'src/main/res/raw/styletable')
+
+sceneform.asset('sampledata/models/whitediningtable.fbx',
+        'default',
+        'sampledata/models/whitediningtable.sfa',
+        'src/main/res/raw/whitediningtable')
+
+sceneform.asset('sampledata/models/yafaraydiningset.fbx',
+        'default',
+        'sampledata/models/yafaraydiningset.sfa',
+        'src/main/res/raw/yafaraydiningset')
+
+sceneform.asset('sampledata/models/candle.fbx',
+        'default',
+        'sampledata/models/candle.sfa',
+        'src/main/res/raw/candle')
+
+sceneform.asset('sampledata/models/discoball.fbx',
+        'default',
+        'sampledata/models/discoball.sfa',
+        'src/main/res/raw/discoball')
+
+sceneform.asset('sampledata/models/fernstand.fbx',
+        'default',
+        'sampledata/models/fernstand.sfa',
+        'src/main/res/raw/fernstand')
+
+sceneform.asset('sampledata/models/hanger.fbx',
+        'default',
+        'sampledata/models/hanger.sfa',
+        'src/main/res/raw/hanger')
+
+sceneform.asset('sampledata/models/lamp.fbx',
+        'default',
+        'sampledata/models/lamp.sfa',
+        'src/main/res/raw/lamp')
+
+sceneform.asset('sampledata/models/livinglamp.fbx',
+        'default',
+        'sampledata/models/livinglamp.sfa',
+        'src/main/res/raw/livinglamp')
+
+sceneform.asset('sampledata/models/mask.fbx',
+        'default',
+        'sampledata/models/mask.sfa',
+        'src/main/res/raw/mask')
+
+sceneform.asset('sampledata/models/potblack.fbx',
+        'default',
+        'sampledata/models/potblack.sfa',
+        'src/main/res/raw/potblack')
+
+sceneform.asset('sampledata/models/potwhite.fbx',
+        'default',
+        'sampledata/models/potwhite.sfa',
+        'src/main/res/raw/potwhite')
+
+sceneform.asset('sampledata/models/smilepiece.fbx',
+        'default',
+        'sampledata/models/smilepiece.sfa',
+        'src/main/res/raw/smilepiece')
+
+sceneform.asset('sampledata/models/tlight.fbx',
+        'default',
+        'sampledata/models/tlight.sfa',
+        'src/main/res/raw/tlight')
+
+sceneform.asset('sampledata/models/beigesofa.fbx',
+        'default',
+        'sampledata/models/beigesofa.sfa',
+        'src/main/res/raw/beigesofa')
+
+sceneform.asset('sampledata/models/finalclearsofa.fbx',
+        'default',
+        'sampledata/models/finalclearsofa.sfa',
+        'src/main/res/raw/finalclearsofa')
+
+sceneform.asset('sampledata/models/finalsimplesofa.fbx',
+        'default',
+        'sampledata/models/finalsimplesofa.sfa',
+        'src/main/res/raw/finalsimplesofa')
+
+sceneform.asset('sampledata/models/idkbeige.fbx',
+        'default',
+        'sampledata/models/idkbeige.sfa',
+        'src/main/res/raw/idkbeige')
+
+sceneform.asset('sampledata/models/ikeaps.fbx',
+        'default',
+        'sampledata/models/ikeaps.sfa',
+        'src/main/res/raw/ikeaps')
+
+sceneform.asset('sampledata/models/leathersofa.fbx',
+        'default',
+        'sampledata/models/leathersofa.sfa',
+        'src/main/res/raw/leathersofa')
+
+sceneform.asset('sampledata/models/redajeebsofa.fbx',
+        'default',
+        'sampledata/models/redajeebsofa.sfa',
+        'src/main/res/raw/redajeebsofa')
+
+sceneform.asset('sampledata/models/sofa.fbx',
+        'default',
+        'sampledata/models/sofa.sfa',
+        'src/main/res/raw/sofa')
+
+sceneform.asset('sampledata/models/spacecouch.fbx',
+        'default',
+        'sampledata/models/spacecouch.sfa',
+        'src/main/res/raw/spacecouch')
+
+sceneform.asset('sampledata/models/usofa.fbx',
+        'default',
+        'sampledata/models/usofa.sfa',
+        'src/main/res/raw/usofa')
+
+sceneform.asset('sampledata/models/whiteajeebsofa.fbx',
+        'default',
+        'sampledata/models/whiteajeebsofa.sfa',
+        'src/main/res/raw/whiteajeebsofa')
+
+sceneform.asset('sampledata/models/yafa.fbx',
+        'default',
+        'sampledata/models/yafa.sfa',
+        'src/main/res/raw/yafa')
+
+sceneform.asset('sampledata/models/barcycle.fbx',
+        'default',
+        'sampledata/models/barcycle.sfa',
+        'src/main/res/raw/barcycle')
+
+sceneform.asset('sampledata/models/barset.fbx',
+        'default',
+        'sampledata/models/barset.sfa',
+        'src/main/res/raw/barset')
+
+sceneform.asset('sampledata/models/barstool.fbx',
+        'default',
+        'sampledata/models/barstool.sfa',
+        'src/main/res/raw/barstool')
+
+sceneform.asset('sampledata/models/frelstool.fbx',
+        'default',
+        'sampledata/models/frelstool.sfa',
+        'src/main/res/raw/frelstool')
+
+sceneform.asset('sampledata/models/kitchenmini.fbx',
+        'default',
+        'sampledata/models/kitchenmini.sfa',
+        'src/main/res/raw/kitchenmini')
+
+sceneform.asset('sampledata/models/kitstool.fbx',
+        'default',
+        'sampledata/models/kitstool.sfa',
+        'src/main/res/raw/kitstool')
+
+sceneform.asset('sampledata/models/stool.fbx',
+        'default',
+        'sampledata/models/stool.sfa',
+        'src/main/res/raw/stool')
+
+sceneform.asset('sampledata/models/stoolwood.fbx',
+        'default',
+        'sampledata/models/stoolwood.sfa',
+        'src/main/res/raw/stoolwood')
+
+sceneform.asset('sampledata/models/taburetka.fbx',
+        'default',
+        'sampledata/models/taburetka.sfa',
+        'src/main/res/raw/taburetka')
+
+sceneform.asset('sampledata/models/redsteel.fbx',
+        'default',
+        'sampledata/models/redsteel.sfa',
+        'src/main/res/raw/redsteel')
+
+sceneform.asset('sampledata/models/blackstudysteel.fbx',
+        'default',
+        'sampledata/models/blackstudysteel.sfa',
+        'src/main/res/raw/blackstudysteel')
+
+sceneform.asset('sampledata/models/desk.fbx',
+        'default',
+        'sampledata/models/desk.sfa',
+        'src/main/res/raw/desk')
+
+sceneform.asset('sampledata/models/gamingdesk.fbx',
+        'default',
+        'sampledata/models/gamingdesk.sfa',
+        'src/main/res/raw/gamingdesk')
+
+sceneform.asset('sampledata/models/kidsdesk.fbx',
+        'default',
+        'sampledata/models/kidsdesk.sfa',
+        'src/main/res/raw/kidsdesk')
+
+sceneform.asset('sampledata/models/metalglasstable.fbx',
+        'default',
+        'sampledata/models/metalglasstable.sfa',
+        'src/main/res/raw/metalglasstable')
+
+sceneform.asset('sampledata/models/padhaitable.fbx',
+        'default',
+        'sampledata/models/padhaitable.sfa',
+        'src/main/res/raw/padhaitable')
+
+sceneform.asset('sampledata/models/pctable.fbx',
+        'default',
+        'sampledata/models/pctable.sfa',
+        'src/main/res/raw/pctable')
+
+sceneform.asset('sampledata/models/studyhalf.fbx',
+        'default',
+        'sampledata/models/studyhalf.sfa',
+        'src/main/res/raw/studyhalf')
+
+sceneform.asset('sampledata/models/studysteel.fbx',
+        'default',
+        'sampledata/models/studysteel.sfa',
+        'src/main/res/raw/studysteel')
+
+sceneform.asset('sampledata/models/woodenofficetable.fbx',
+        'default',
+        'sampledata/models/woodenofficetable.sfa',
+        'src/main/res/raw/woodenofficetable')
+
+sceneform.asset('sampledata/models/barstable.fbx',
+        'default',
+        'sampledata/models/barstable.sfa',
+        'src/main/res/raw/barstable')
+
+sceneform.asset('sampledata/models/concretetable.fbx',
+        'default',
+        'sampledata/models/concretetable.sfa',
+        'src/main/res/raw/concretetable')
+
+sceneform.asset('sampledata/models/ctable.fbx',
+        'default',
+        'sampledata/models/ctable.sfa',
+        'src/main/res/raw/ctable')
+
+sceneform.asset('sampledata/models/livingroomtable.fbx',
+        'default',
+        'sampledata/models/livingroomtable.sfa',
+        'src/main/res/raw/livingroomtable')
+
+sceneform.asset('sampledata/models/revolvingtable.fbx',
+        'default',
+        'sampledata/models/revolvingtable.sfa',
+        'src/main/res/raw/revolvingtable')
+
+sceneform.asset('sampledata/models/scarytable.fbx',
+        'default',
+        'sampledata/models/scarytable.sfa',
+        'src/main/res/raw/scarytable')
+
+sceneform.asset('sampledata/models/tablered.fbx',
+        'default',
+        'sampledata/models/tablered.sfa',
+        'src/main/res/raw/tablered')
+
+sceneform.asset('sampledata/models/tablewood.fbx',
+        'default',
+        'sampledata/models/tablewood.sfa',
+        'src/main/res/raw/tablewood')
+
+sceneform.asset('sampledata/models/white.fbx',
+        'default',
+        'sampledata/models/white.sfa',
+        'src/main/res/raw/white')
+
+sceneform.asset('sampledata/models/whitelevels.fbx',
+        'default',
+        'sampledata/models/whitelevels.sfa',
+        'src/main/res/raw/whitelevels')
+
+sceneform.asset('sampledata/models/teletable.fbx',
+        'default',
+        'sampledata/models/teletable.sfa',
+        'src/main/res/raw/teletable')
+
+sceneform.asset('sampledata/models/tvred.fbx',
+        'default',
+        'sampledata/models/tvred.sfa',
+        'src/main/res/raw/tvred')
+
+sceneform.asset('sampledata/models/tvsimple.fbx',
+        'default',
+        'sampledata/models/tvsimple.sfa',
+        'src/main/res/raw/tvsimple')
+
+sceneform.asset('sampledata/models/tvunit.fbx',
+        'default',
+        'sampledata/models/tvunit.sfa',
+        'src/main/res/raw/tvunit')
+
+sceneform.asset('sampledata/models/tvunitbig.fbx',
+        'default',
+        'sampledata/models/tvunitbig.sfa',
+        'src/main/res/raw/tvunitbig')
+
+sceneform.asset('sampledata/models/tvunitnew.fbx',
+        'default',
+        'sampledata/models/tvunitnew.sfa',
+        'src/main/res/raw/tvunitnew')
+
+sceneform.asset('sampledata/models/tvunitsmall.fbx',
+        'default',
+        'sampledata/models/tvunitsmall.sfa',
+        'src/main/res/raw/tvunitsmall')
+
+sceneform.asset('sampledata/models/changing.fbx',
+        'default',
+        'sampledata/models/changing.sfa',
+        'src/main/res/raw/changing')
+
+sceneform.asset('sampledata/models/coronawardrobe.fbx',
+        'default',
+        'sampledata/models/coronawardrobe.sfa',
+        'src/main/res/raw/coronawardrobe')
+
+sceneform.asset('sampledata/models/doorsingle.fbx',
+        'default',
+        'sampledata/models/doorsingle.sfa',
+        'src/main/res/raw/doorsingle')
+
+sceneform.asset('sampledata/models/doortriple.fbx',
+        'default',
+        'sampledata/models/doortriple.sfa',
+        'src/main/res/raw/doortriple')
+
+sceneform.asset('sampledata/models/drawerhalf.fbx',
+        'default',
+        'sampledata/models/drawerhalf.sfa',
+        'src/main/res/raw/drawerhalf')
+
+sceneform.asset('sampledata/models/meuble.fbx',
+        'default',
+        'sampledata/models/meuble.sfa',
+        'src/main/res/raw/meuble')
+
+sceneform.asset('sampledata/models/sidehalf.fbx',
+        'default',
+        'sampledata/models/sidehalf.sfa',
+        'src/main/res/raw/sidehalf')
+
+sceneform.asset('sampledata/models/walking.fbx',
+        'default',
+        'sampledata/models/walking.sfa',
+        'src/main/res/raw/walking')
+
+sceneform.asset('sampledata/models/wardrobecut.fbx',
+        'default',
+        'sampledata/models/wardrobecut.sfa',
+        'src/main/res/raw/wardrobecut')
+
+sceneform.asset('sampledata/models/whiteopen.fbx',
+        'default',
+        'sampledata/models/whiteopen.sfa',
+        'src/main/res/raw/whiteopen')
+
+sceneform.asset('sampledata/models/fourdoor.fbx',
+        'default',
+        'sampledata/models/fourdoor.sfa',
+        'src/main/res/raw/fourdoor')
+
+sceneform.asset('sampledata/models/stove.fbx',
+        'default',
+        'sampledata/models/stove.sfa',
+        'src/main/res/raw/stove')
+
+sceneform.asset('sampledata/models/tvunitlast.fbx',
+        'default',
+        'sampledata/models/tvunitlast.sfa',
+        'src/main/res/raw/tvunitlast')
